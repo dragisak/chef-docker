@@ -10,5 +10,6 @@ docker start -i chef
 ```
 
 ```
-berks vendor -b /opt/ticketfly/chef/tfly-alluxio/Berksfile
+berks vendor -b /opt/ticketfly/chef/tfly-alluxio/Berksfile $COOKBOOK_PATH
+chef-client -r "recipe[tfly-alluxio]"
 ```
