@@ -5,7 +5,7 @@ docker build -t dragisak/chef-docker
 ```
 
 ```
-docker run -i -t -P -v /Users/dragisak/Ticketfly/chef:/opt/ticketfly/chef dragisak/chef-docker bash -l
+docker run -i -t --name chef -P -v /Users/dragisak/Ticketfly/chef/tfly-alluxio:/opt/ticketfly/chef/tfly-alluxio dragisak/chef-docker bash -l
 docker start -i chef
 ```
 
