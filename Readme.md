@@ -4,7 +4,7 @@
 ## Running container
 
 ```
-docker run -i -t --name chef -P -v /Users/dragisak/Ticketfly/chef/tfly-alluxio:/opt/ticketfly/chef/tfly-alluxio dragisak/chef-docker bash -l
+docker run -i -t --name chef -p 19999:19999 -p 19998:19998 -v /Users/dragisak/Ticketfly/chef/tfly-alluxio:/opt/ticketfly/chef/tfly-alluxio dragisak/chef-docker bash -l
 docker start -i chef
 ```
 
@@ -12,7 +12,7 @@ docker start -i chef
 
 ```
 berks vendor -b /opt/ticketfly/chef/tfly-alluxio/Berksfile $COOKBOOK_PATH
-chef-client -l info -r "recipe[tfly-alluxio]"
+chef-client -l info -r "recipe[tfly-alluxio::master]"
 ```
 
 ## Building loally
